@@ -1,0 +1,26 @@
+﻿
+<h3>{{this.pageTitle}}</h3>
+
+
+<div class="panel-body">
+    <div class="center-block">
+        <button *ngIf="!bollStartGame &&  gameRun == -1" (click)="startGame()">Start Game</button>
+        <button *ngIf="bollStartGame" (click)="pauseGame()">Pause Game</button>
+        <button *ngIf="!bollStartGame &&  gameRun != -1 " (click)="resumeGame()">Resume Game</button>
+        <p>Your score is  {{score}} </p>
+    </div>
+    <div class="container">
+        <table class='table '>
+            <tr *ngFor="let row of bord">
+                <td *ngFor="let col of row">
+                    <img  [src]="col"
+                         sstyle="width:10px;height:10px;" />
+
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class='has-error' *ngIf='errorMessage'>{{errorMessage}}</div>
+
+</div>

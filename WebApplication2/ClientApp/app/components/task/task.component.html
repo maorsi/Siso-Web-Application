@@ -1,0 +1,39 @@
+
+<br />
+<br />
+
+<div class="panel-heading">
+    <h3>{{this.pageTitle}}</h3>
+    <p>List of all the tasks </p>
+</div>
+   
+    <div class="panel-body">
+        <div class='row'>
+            <div class='col-md-2'>Filter by:</div>
+            <div class='col-md-4'>
+                <input type='text' [(ngModel)]='filteredByName' />
+            </div>
+        </div>
+        <p *ngIf="!filterTasks"><em>Loading...</em></p>
+
+        <table class='table' *ngIf="filterTasks">
+            <thead>
+                <tr>
+                    <th>Information</th>
+                    <th>Start Date (C)</th>
+                    <th>End Date (F)</th>
+                    <th>Days remaining </th>
+                    <th>Edit </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let task of filterTasks">
+                    <td>{{ task.information }}</td>
+                    <td>{{ task.startDate | date }}</td>
+                    <td>{{ task.endDate | date}}</td>
+                    <td>{{ showDiffrent(task.startDate , task.endDate ) }}</td>
+                    <td> <a [routerLink]="['/edit-task', task.id]">Edit </a> </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
