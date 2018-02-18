@@ -1,1 +1,11 @@
-﻿
+﻿ td {
+    padding: 0px !important;
+    margin: 0px !important;
+    width: 20px;
+    height: 35px;
+}
+table,tr {
+    padding: 0px !important;
+    margin: 0px !important;
+
+}

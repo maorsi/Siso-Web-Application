@@ -9,12 +9,13 @@
         <button *ngIf="!bollStartGame &&  gameRun != -1 " (click)="resumeGame()">Resume Game</button>
         <p>Your score is  {{score}} </p>
     </div>
+
     <div class="container">
         <table class='table '>
             <tr *ngFor="let row of bord">
                 <td *ngFor="let col of row">
                     <img  [src]="col"
-                         sstyle="width:10px;height:10px;" />
+                         style="width:100%;height:100%;" />
 
                 </td>
             </tr>
