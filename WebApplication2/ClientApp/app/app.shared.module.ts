@@ -9,13 +9,15 @@ import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
 //import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 //import { CounterComponent } from './components/counter/counter.component';
-
+import { CoolStorageModule } from 'angular2-cool-storage';
 
 
 
 import { UserModule } from './components/user/user.module';
-import { TaskModule } from './components/task/task.module';
-import { SnakeModule } from './components/snake/snake.module';
+//import { TaskModule } from './components/task/task.module';
+//import { SnakeModule } from './components/snake/snake.module';
+import { AuthGuard } from './components/user/auth-guard.service';
+import { AppRoutingModule } from './app-routing.module';
 
 
 
@@ -35,14 +37,10 @@ import { SnakeModule } from './components/snake/snake.module';
         FormsModule,
         ReactiveFormsModule,
         UserModule,
-        TaskModule,
-        SnakeModule,
-        RouterModule.forRoot([
-            { path: '', redirectTo: 'home', pathMatch: 'full' },
-            { path: 'home', component: HomeComponent },
+        CoolStorageModule,
 
-            { path: '**', redirectTo: 'home' }
-        ])
+        AppRoutingModule
+
     ],
     providers: [ ]
 })

@@ -5,11 +5,11 @@ using System.Linq;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using WebApplication2.Entities;
-using WebApplication2.Models;
-using WebApplication2.Services;
+using SisoWebApplication.Entities;
+using SisoWebApplication.Models;
+using SisoWebApplication.Services;
 
-namespace WebApplication2.Controllers
+namespace SisoWebApplication.Controllers
 {
 
     [Route("api/user/{userId}/task")]

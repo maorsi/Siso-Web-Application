@@ -8,7 +8,7 @@ import { IUser } from './user';
 @Component({
 
     templateUrl: './newuser.component.html',
-  //  styleUrls: ['./newuser.component.css']
+    styleUrls: ['./newuser.component.css']
 })
 
 export class NewUserComponent implements OnInit, OnDestroy {

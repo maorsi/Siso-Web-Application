@@ -1,12 +1,13 @@
-﻿using System;
+﻿using SisoWebApplication.Entities;
+using SisoWebApplication.Models;
+using SisoWebApplication.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebApplication2.Entities;
-using WebApplication2.Models;
-using WebApplication2.Repository;
 
-namespace WebApplication2.Services
+
+namespace SisoWebApplication.Services
 {
     public class UserServices : IUserServices
     {

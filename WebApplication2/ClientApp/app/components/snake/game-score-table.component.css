@@ -1,4 +1,4 @@
-body, html {
+﻿body, html {
     height: 100%;
     background-repeat: no-repeat;
     background-color: #d3d3d3;
@@ -34,7 +34,7 @@ input::-webkit-input-placeholder {
     padding-top: 3px;
 }
 
-.main-login {
+.main-task {
     background-color: #fff;
     /* shadows and rounded borders */
     -moz-border-radius: 5px;
@@ -48,15 +48,6 @@ input::-webkit-input-placeholder {
 .main-center {
     margin-top: 30px;
     margin: 0 auto;
-    max-width: 400px;
+    max-width: 1000px;
     padding: 50px 50px;
-}
-
-.login-button {
-    margin-top: 5px;
-}
-
-.login-register {
-    font-size: 15px;
-    text-align: center;
 }

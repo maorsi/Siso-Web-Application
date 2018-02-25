@@ -67,7 +67,8 @@ export class TaskComponent implements OnInit {
     * ngOnInit set pageTitle  and send get requst to the server to get the ITask[]
     */
     ngOnInit() {
-        this.pageTitle = "Welcome " + this.authService.getUserFirstName() + "Here Your Task List";
+       
+        this.pageTitle = "Welcome " + this.authService.getUserFirstName() + " Here Your Task List";
 
 
         this.taskService.getTask(this.authService.getUserId()).subscribe(tasks => {

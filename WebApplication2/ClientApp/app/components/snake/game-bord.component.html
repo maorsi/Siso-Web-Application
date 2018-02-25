@@ -1,27 +1,32 @@
 ﻿
-<h3>{{this.pageTitle}}</h3>
-
-
-<div class="panel-body">
-    <div class="center-block">
-        <button *ngIf="!bollStartGame &&  gameRun == -1" (click)="startGame()">Start Game</button>
-        <button *ngIf="bollStartGame" (click)="pauseGame()">Pause Game</button>
-        <button *ngIf="!bollStartGame &&  gameRun != -1 " (click)="resumeGame()">Resume Game</button>
-        <p>Your score is  {{score}} </p>
+<div class="container">
+    <div class="panel-heading">
+        <div class="panel-title text-center">
+            <h1 class="title">{{this.pageTitle}}</h1>
+            <hr />
+        </div>
     </div>
 
-    <div class="container">
-        <table class='table '>
-            <tr *ngFor="let row of bord">
-                <td *ngFor="let col of row">
-                    <img  [src]="col"
-                         style="width:100%;height:100%;" />
+    <div class="main-login main-center">
+    
+            <h4 *ngIf="!this.authService.isLoggedIn()" class="title">For the score to save you need to log in  </h4>
+            <button *ngIf="!bollStartGame &&  gameRun == -1" (click)="startGame()" class="game" >Start Game</button>
+            <button *ngIf="bollStartGame" (click)="pauseGame()" class="game" >Pause Game</button>
+            <button *ngIf="!bollStartGame &&  gameRun != -1 " (click)="resumeGame()" class="game" >Resume Game</button>
+            <h3 class="title">Your score is  {{score}} </h3>
 
-                </td>
-            </tr>
-        </table>
+        <div id="main">
+            <div class="row main" *ngFor="let row of bord">
+
+                <img *ngFor="let col of row" [src]="col" />
+
+            </div>
+
+
+        </div>
+
+        <div class='has-error' *ngIf='errorMessage'>{{errorMessage}}</div>
+
     </div>
-
-    <div class='has-error' *ngIf='errorMessage'>{{errorMessage}}</div>
 
 </div>

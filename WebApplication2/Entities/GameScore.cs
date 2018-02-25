@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-
+using System.Threading.Tasks;
 
 namespace SisoWebApplication.Entities
 {
-    public class Task
+    public class GameScore
     {
 
         [Key]
@@ -17,12 +17,10 @@ namespace SisoWebApplication.Entities
         public Guid UserId { get; set; }
 
         [Required]
-        public String Information { get; set; }
+        public String UserName { get; set; }
 
-
-        public DateTime StartDate { get; set; }
-
-        public DateTime EndDate { get; set; }
+        [Required]
+        public long Score { get; set; }
 
     }
 }

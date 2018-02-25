@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebApplication2.Entities
+namespace SisoWebApplication.Entities
 {
     public class User
     {

@@ -1,10 +1,12 @@
-﻿using System;
+﻿
+using SisoWebApplication.Entities;
+using SisoWebApplication.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using WebApplication2.Entities;
-using WebApplication2.Repository;
 
-namespace WebApplication2.Services
+
+namespace SisoWebApplication.Services
 {
     public class TaskServices : ITaskServices
     {

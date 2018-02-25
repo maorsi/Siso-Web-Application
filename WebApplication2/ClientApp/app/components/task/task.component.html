@@ -1,13 +1,12 @@
 
-<br />
-<br />
-
-<div class="panel-heading">
-    <h3>{{this.pageTitle}}</h3>
-    <p>List of all the tasks </p>
-</div>
-   
-    <div class="panel-body">
+<div class="container">
+    <div class="panel-heading">
+        <div class="panel-title text-center">
+            <h1 class="title">{{this.pageTitle}}</h1>
+            <hr />
+        </div>
+    </div>
+    <div class="main-task main-center">
         <div class='row'>
             <div class='col-md-2'>Filter by:</div>
             <div class='col-md-4'>
@@ -16,8 +15,8 @@
         </div>
         <p *ngIf="!filterTasks"><em>Loading...</em></p>
 
-        <table class='table' *ngIf="filterTasks">
-            <thead>
+        <table class='table table-striped' *ngIf="filterTasks">
+            <thead class="thead-dark">
                 <tr>
                     <th>Information</th>
                     <th>Start Date (C)</th>
@@ -32,8 +31,10 @@
                     <td>{{ task.startDate | date }}</td>
                     <td>{{ task.endDate | date}}</td>
                     <td>{{ showDiffrent(task.startDate , task.endDate ) }}</td>
-                    <td> <a [routerLink]="['/edit-task', task.id]">Edit </a> </td>
+                    <td> <a [routerLink]="['/task', task.id]">Edit </a> </td>
                 </tr>
             </tbody>
         </table>
     </div>
+
+</div>

@@ -1,9 +1,10 @@
-﻿using System;
+﻿using SisoWebApplication.Entities;
+using SisoWebApplication.Models;
+using System;
 using System.Collections.Generic;
-using WebApplication2.Entities;
-using WebApplication2.Models;
 
-namespace WebApplication2.Services
+
+namespace SisoWebApplication.Services
 {
     public interface IUserServices
     {

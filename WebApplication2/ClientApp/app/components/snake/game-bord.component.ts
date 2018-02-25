@@ -5,8 +5,9 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 import { ActivatedRoute, Router } from '@angular/router';
 import { Snake } from './snake';
 import { Point } from './point';
-
-
+import { AuthService } from '../user/auth.service';
+import { GameScoreService } from './game-score.service';
+import { IScoreForCreate } from './IScoreForCreate';
 
 @Component({
 
@@ -28,14 +29,15 @@ export class GameBordComponent implements OnInit, OnDestroy {
     starPoint: Point;
     score: number;
     time: number;
-
+    userScore: IScoreForCreate;
 
     IMAGE_BLANK = '/img/white_box.gif';
     IMAGE_SNAKE = '/img/black_dot.gif';
     IMAGE_STAR = '/img/star.gif';
 
 
-    constructor() {
+    constructor(private authService: AuthService,
+               private gameScoreService: GameScoreService) {
        
         window.addEventListener('keyup', (e: any) => {
             switch (e.keyCode) {
@@ -130,16 +132,31 @@ export class GameBordComponent implements OnInit, OnDestroy {
 
         var gameStatus=  this.player.moveSnake(this.bord);
         if (gameStatus == MoveStatus.EndGame) {
-            this.bollStartGame = false;
-            this.pageTitle = 'Game Over';
-            clearInterval(this.gameRun);
-            this.gameRun = -1;
+            this.gameOver();
             return;
         }
         else if (gameStatus == MoveStatus.EatFruit) {
             this.eatFruit();
         }
   
+
+    }
+
+    gameOver(): void {
+        this.bollStartGame = false;
+        this.pageTitle = 'Game Over';
+        clearInterval(this.gameRun);
+        this.gameRun = -1;
+
+        if (this.authService.isLoggedIn()) {
+        //    console.log(this.authService.getUserId());
+            this.userScore = {
+                userId: this.authService.getUserId(),
+                userName: this.authService.getUserFirstName() + " " + this.authService.getUserLastName(),
+                score: this.score
+            }
+            this.gameScoreService.createScore(this.authService.getUserId(), this.userScore).subscribe(result => this.userScore = result.json as IScoreForCreate, error => this.onError(error));
+        }
 
     }
     eatFruit(): void {
@@ -156,7 +173,15 @@ export class GameBordComponent implements OnInit, OnDestroy {
         }, this.time);
 
     }
+    /*
+* onError get the error and console it 
+*/
+    onError(error: any): void {
 
+        console.log(error);
+        this.errorMessage = error._body;
+
+    }
     /*
  * ngOnDestroy  
  */

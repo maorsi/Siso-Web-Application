@@ -54,8 +54,8 @@ export class CreateTaskComponent implements OnInit, OnDestroy {
         this.taskService.createTask(this.authService.getUserId(), task).subscribe((result) => {
         
         }, (error) => console.log(error));
-           
-        this.router.navigate(['/task-list']);
+       //     <a [routerLink]="['/task/list']">
+        this.router.navigate(['/task/list']);
 
     }
     /*

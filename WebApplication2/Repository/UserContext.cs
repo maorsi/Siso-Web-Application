@@ -1,11 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SisoWebApplication.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebApplication2.Entities;
 
-namespace WebApplication2.Repository
+
+namespace SisoWebApplication.Repository
 {
     public class UserContext : DbContext
     {
@@ -19,5 +20,7 @@ namespace WebApplication2.Repository
         public DbSet<User> User { get; set; }
 
         public DbSet<Entities.Task> Task { get; set; }
+
+        public DbSet<Entities.GameScore> GameScore { get; set; }
     }
 }

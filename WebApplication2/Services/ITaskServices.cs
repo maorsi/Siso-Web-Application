@@ -1,8 +1,9 @@
-﻿using System;
+﻿using SisoWebApplication.Entities;
+using System;
 using System.Collections.Generic;
-using WebApplication2.Entities;
 
-namespace WebApplication2.Services
+
+namespace SisoWebApplication.Services
 {
     public interface ITaskServices
     {

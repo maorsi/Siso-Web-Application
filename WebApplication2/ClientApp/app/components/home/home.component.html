@@ -1,4 +1,10 @@
-<h1>{{pageTitle}}</h1>
+<div class="panel-heading">
+    <div class="panel-title text-center">
+        <h1 class="title">{{this.pageTitle}}</h1>
+        <hr />
+    </div>
+</div>
+<div class="main-home main-center">
+    <div [innerHTML]="pageBody"></div>
 
-
-<div  [innerHTML]="pageBody"></div>
+</div>

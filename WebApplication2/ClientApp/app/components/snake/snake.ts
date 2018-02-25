@@ -2,10 +2,10 @@
 import { MoveStatus } from "./game-bord.component";
 
 export class Snake {
-    locationOnBord: Point[];
-    directionX: number;
-    directionY: number;
-    bordBorder: number;
+     locationOnBord: Point[];
+     directionX: number;
+     directionY: number;
+     bordBorder: number;
     IMAGE_BLANK = '/img/white_box.gif';
     IMAGE_SNAKE = '/img/black_dot.gif';
     IMAGE_STAR = '/img/star.gif';
@@ -38,7 +38,7 @@ export class Snake {
                     return MoveStatus.EndGame;
 
 
-                if (this.locationOnBord.filter(point => point === this.locationOnBord[0]).length != 1) {
+                if (this.locationOnBord.filter(point => point.x == this.locationOnBord[0].x && point.y == this.locationOnBord[0].y).length > 1) {
                     return MoveStatus.EndGame;
                 }
 

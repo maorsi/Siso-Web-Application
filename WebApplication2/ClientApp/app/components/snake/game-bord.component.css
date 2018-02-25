@@ -1,11 +1,57 @@
-﻿ td {
-    padding: 0px !important;
-    margin: 0px !important;
-    width: 20px;
-    height: 35px;
+﻿h1.title {
+    font-size: 50px;
+    font-family: 'Passion One', cursive;
+    font-weight: 400;
 }
-table,tr {
-    padding: 0px !important;
-    margin: 0px !important;
 
+h4.title {
+    font-size: 30px;
+    font-family: 'Adobe Song Std', cursive;
+    font-weight: 200;
 }
+h3.title {
+    font-size: 30px;
+    font-family: 'Adobe Song Std', cursive;
+    font-weight: 200;
+}
+button.game {
+    font-size: 20px;
+    font-family: 'Adobe Song Std', cursive;
+    font-weight: 100;
+}
+
+
+#main {
+
+    line-height: 0;
+}
+
+img {
+        float: left;
+}
+
+hr {
+    width: 10%;
+    color: #fff;
+}
+
+
+
+.main-login {
+    background-color: #fff;
+    /* shadows and rounded borders */
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.main-center {
+    margin-top: 30px;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 50px 50px;
+}
+

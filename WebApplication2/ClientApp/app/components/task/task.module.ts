@@ -22,9 +22,9 @@ import { TaskEditGuard } from './task-edit-guard.service';
         FormsModule,
         ReactiveFormsModule,
         RouterModule.forChild([
-            { path: 'task-list', component: TaskComponent, canActivate: [AuthGuard] },
-            { path: 'create-task', component: CreateTaskComponent, canActivate: [AuthGuard] },
-            { path: 'edit-task/:id', component: EditTaskComponent, canActivate: [AuthGuard], canDeactivate: [TaskEditGuard] },
+            { path: 'list', component: TaskComponent },
+            { path: '', component: CreateTaskComponent },
+            { path: ':id', component: EditTaskComponent, canDeactivate: [TaskEditGuard] },
 
         ])
     ],

@@ -1,0 +1,28 @@
+﻿<div class="container">
+    <div class="panel-heading">
+        <div class="panel-title text-center">
+            <h1 class="title">{{this.pageTitle}}</h1>
+            <hr />
+        </div>
+    </div>
+    <div class="main-task main-center">
+
+        <p *ngIf="!tableScore"><em>Loading...</em></p>
+
+        <table class='table table-striped' *ngIf="tableScore">
+            <thead class="thead-dark">
+                <tr>
+                    <th>User Name</th>
+                    <th>Score </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let score of tableScore">
+                    <td>{{ score.userName }}</td>
+                    <td>{{ score.score  }}</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

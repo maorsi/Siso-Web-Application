@@ -1,61 +1,51 @@
 ﻿
-<h3>{{this.pageTitle}}</h3>
-
-
-<div class="panel-body">
-    <form class="form-horizontal" (submit)="updateTask()" [formGroup]="taskForm">
-        <fieldset>
-            <div class="form-group">
-                <label class="col-md-2 control-label" for="informationId">Information</label>
-                <div class="col-md-8">
-                    <input class="form-control"
-                           id="informationId"
-                           type="text"
-                           placeholder="Task Information (required)"
-                           formControlName="information" />
-
-                </div>
+<div class="container">
+    <div class="row main">
+        <div class="panel-heading">
+            <div class="panel-title text-center">
+                <h1 class="title">{{this.pageTitle}}</h1>
+                <hr />
             </div>
+        </div>
+        <div class="main-task main-center">
+            <form class="form-horizontal" (submit)="updateTask()" [formGroup]="taskForm">
 
-            <div class="form-group">
-                <label class="col-md-2 control-label" for="startDateId">Start Date</label>
-                <div class="col-md-8">
-                    <input class="form-control"
-                           id="startDateId"
-                           type="date"
-                           formControlName="startDate" />
+                <div class="form-group">
+                    <label for="information" class="cols-sm-2 control-label">Information</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" name="information" id="information" placeholder="Enter your Task Information" formControlName="information" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="startDate" class="cols-sm-2 control-label">Start Date</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                            <input type="date" class="form-control" name="startDate" id="startDate" placeholder="Enter your Last Name" formControlName="startDate" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="endDate" class="cols-sm-2 control-label">End Date</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                            <input type="date" class="form-control" name="endDate" id="endDate" placeholder="Enter your Email" formControlName="endDate" />
+                        </div>
+                    </div>
                 </div>
 
-            </div>
 
 
-            <div class="form-group">
-                <label class="col-md-2 control-label" for="endDateId">End Date</label>
-                <div class="col-md-8">
-                    <input class="form-control"
-                           id="endDateId"
-                           type="date"
-                           formControlName="endDate" />
+                <div class="form-group ">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block task-button"  [disabled]='!taskForm.valid'>Save Task</button>
                 </div>
-            </div>
 
-
-            <div class="form-group">
-                <div class="col-md-4 col-md-offset-2">
-                    <span>
-                        <button class="btn btn-primary"
-                                type="submit"
-                                style="width:80px;margin-right:10px"
-                                [disabled]='!taskForm.valid'>
-                            Save
-                        </button>
-                    </span>
-
-                </div>
-            </div>
-        </fieldset>
-    </form>
-
+            </form>
+        </div>
+    </div>
     <div class='alert alert-danger' *ngIf='errorMessage'>{{errorMessage}}</div>
-
 </div>

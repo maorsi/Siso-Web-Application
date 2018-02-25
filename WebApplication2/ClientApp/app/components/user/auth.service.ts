@@ -1,5 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 import { IUser } from './user';
+import { CoolLocalStorage } from 'angular2-cool-storage';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/throw';
@@ -13,6 +14,7 @@ import { Login } from './login';
 
 @Injectable()
 export class AuthService {
+
     _currentUser: IUser;
     userLogin: boolean;
     baseUrl: String
@@ -23,9 +25,18 @@ export class AuthService {
     */
 
     constructor(private http: Http,
-        @Inject('BASE_URL') baseUrl: string) {
+        @Inject('BASE_URL') baseUrl: string,
+        private localStorage: CoolLocalStorage) {
         this.userLogin = false;
         this.baseUrl = baseUrl;
+      
+ // check if the user already in the local Storage
+        var user = this.localStorage.getItem('user');
+        if (user != null) {
+            this.userLogin = true;
+            this._currentUser = JSON.parse(user);
+        }
+        
     }
 
     /*
@@ -72,6 +83,7 @@ export class AuthService {
             email: ''
 
         }
+        this.localStorage.removeItem('user');
     }
     get currentUser(): IUser {
         return this._currentUser;
@@ -81,10 +93,14 @@ export class AuthService {
     */
     setUser(user: IUser, userLogin: boolean): void {
 
+        this.localStorage.setItem('user', JSON.stringify(user));
         this._currentUser = user;
         this.userLogin = userLogin;
+      //  sessionStorage.setItem('user', JSON.stringify(user));
     }
-
+    getUserLastName(): string {
+        return this._currentUser.lastName;
+    }
 
     /*
     * newUser get the user  information  and send post request to the server and return Observable
