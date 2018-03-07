@@ -9,8 +9,13 @@
     <div class="main-task main-center">
         <div class='row'>
             <div class='col-md-2'>Filter by:</div>
-            <div class='col-md-4'>
-                <input type='text' [(ngModel)]='filteredByName' />
+            <div class='col-md-12'>
+                <label for="information" class=" control-label">Information</label>
+                <input name="information" type='text' [(ngModel)]='filteredByName' />
+                <label for="startDate" class=" control-label">Start Date</label>
+                <input name="startDate" type='date' [(ngModel)]='filterStartString' />
+                <label for="endDate" class=" control-label">End Date</label>
+                <input name="endDate" type='date' [(ngModel)]='filterEndtDateString' />
             </div>
         </div>
         <p *ngIf="!filterTasks"><em>Loading...</em></p>

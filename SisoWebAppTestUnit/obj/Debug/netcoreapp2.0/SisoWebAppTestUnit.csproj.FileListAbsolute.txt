@@ -1,0 +1,17 @@
+C:\Users\siso\source\repos\SisoWebApplication\SisoWebAppTestUnit\bin\Debug\netcoreapp2.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\siso\source\repos\SisoWebApplication\SisoWebAppTestUnit\bin\Debug\netcoreapp2.0\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\siso\source\repos\SisoWebApplication\SisoWebAppTestUnit\bin\Debug\netcoreapp2.0\xunit.runner.utility.netcoreapp10.dll
+C:\Users\siso\source\repos\SisoWebApplication\SisoWebAppTestUnit\bin\Debug\netcoreapp2.0\SisoWebAppTestUnit.deps.json
+C:\Users\siso\source\repos\SisoWebApplication\SisoWebAppTestUnit\bin\Debug\netcoreapp2.0\SisoWebAppTestUnit.runtimeconfig.json
+C:\Users\siso\source\repos\SisoWebApplication\SisoWebAppTestUnit\bin\Debug\netcoreapp2.0\SisoWebAppTestUnit.runtimeconfig.dev.json
+C:\Users\siso\source\repos\SisoWebApplication\SisoWebAppTestUnit\bin\Debug\netcoreapp2.0\SisoWebAppTestUnit.dll
+C:\Users\siso\source\repos\SisoWebApplication\SisoWebAppTestUnit\bin\Debug\netcoreapp2.0\SisoWebAppTestUnit.pdb
+C:\Users\siso\source\repos\SisoWebApplication\SisoWebAppTestUnit\bin\Debug\netcoreapp2.0\SisoWebApplication.dll
+C:\Users\siso\source\repos\SisoWebApplication\SisoWebAppTestUnit\bin\Debug\netcoreapp2.0\SisoWebApplication.pdb
+C:\Users\siso\source\repos\SisoWebApplication\SisoWebAppTestUnit\obj\Debug\netcoreapp2.0\SisoWebAppTestUnit.csprojResolveAssemblyReference.cache
+C:\Users\siso\source\repos\SisoWebApplication\SisoWebAppTestUnit\obj\Debug\netcoreapp2.0\SisoWebAppTestUnit.csproj.CoreCompileInputs.cache
+C:\Users\siso\source\repos\SisoWebApplication\SisoWebAppTestUnit\obj\Debug\netcoreapp2.0\SisoWebAppTestUnit.AssemblyInfoInputs.cache
+C:\Users\siso\source\repos\SisoWebApplication\SisoWebAppTestUnit\obj\Debug\netcoreapp2.0\SisoWebAppTestUnit.AssemblyInfo.cs
+C:\Users\siso\source\repos\SisoWebApplication\SisoWebAppTestUnit\obj\Debug\netcoreapp2.0\SisoWebAppTestUnit.dll
+C:\Users\siso\source\repos\SisoWebApplication\SisoWebAppTestUnit\obj\Debug\netcoreapp2.0\SisoWebAppTestUnit.pdb
+C:\Users\siso\source\repos\SisoWebApplication\SisoWebAppTestUnit\obj\Debug\netcoreapp2.0\SisoWebAppTestUnit.csproj.CopyComplete

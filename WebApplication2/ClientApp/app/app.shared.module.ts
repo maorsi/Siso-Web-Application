@@ -18,6 +18,7 @@ import { UserModule } from './components/user/user.module';
 //import { SnakeModule } from './components/snake/snake.module';
 import { AuthGuard } from './components/user/auth-guard.service';
 import { AppRoutingModule } from './app-routing.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -38,6 +39,7 @@ import { AppRoutingModule } from './app-routing.module';
         ReactiveFormsModule,
         UserModule,
         CoolStorageModule,
+        NgbModule.forRoot(),
 
         AppRoutingModule
 

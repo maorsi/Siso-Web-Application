@@ -60,7 +60,7 @@ namespace SisoWebApplication.Controllers
                 logger.LogInformation("Login User " + userForCheckingInformation.ToString());
                 if (!userServices.UserExists(userForCheckingInformation) || !ModelState.IsValid)
                 {
-                    return BadRequest();
+                    return BadRequest("User Not Exsist");
                 }
                 return Ok(userServices.GetUser(userForCheckingInformation));
             }
@@ -86,7 +86,7 @@ namespace SisoWebApplication.Controllers
                 User user = userServices.GetUserById(id);
                 if (user == null)
                 {
-                  return NoContent();
+                  return BadRequest("User not found");
                 }
 
                return Ok(user);
@@ -111,8 +111,8 @@ namespace SisoWebApplication.Controllers
                 logger.LogInformation("Add User " + userForCreation.ToString());
                 if (userForCreation == null || !ModelState.IsValid )
                {
-                    return BadRequest();
-               }
+                    return BadRequest("User not valid");
+                }
 
                if (userServices.UserExists(userForCreation.Email))
                {

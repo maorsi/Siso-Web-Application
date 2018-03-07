@@ -13,7 +13,6 @@ import { TaskService } from './task.service';
 import { TaskEditGuard } from './task-edit-guard.service';
 
 
-
 @NgModule({
 
     imports: [
@@ -21,6 +20,7 @@ import { TaskEditGuard } from './task-edit-guard.service';
         HttpModule,
         FormsModule,
         ReactiveFormsModule,
+       
         RouterModule.forChild([
             { path: 'list', component: TaskComponent },
             { path: '', component: CreateTaskComponent },
@@ -31,6 +31,7 @@ import { TaskEditGuard } from './task-edit-guard.service';
     declarations: [
         TaskComponent,
         CreateTaskComponent,
+      
         EditTaskComponent
 
     ],

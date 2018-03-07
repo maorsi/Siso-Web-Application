@@ -45,5 +45,8 @@ namespace SisoWebApplication.Entities
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Password);
             return hashCode;
         }
+
+
+
     }
 }

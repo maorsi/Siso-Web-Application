@@ -18,6 +18,8 @@ export class TaskComponent implements OnInit {
     errorMessage: string;
     _filteredByName: string;
     _filterStartDate: Date;
+    _filterStartString: string;
+    _filterEndString: string;
     _filterEndtDate: Date;
     /*
     * constructor get ActivatedRoute,Router,TaskService ,AuthService
@@ -28,22 +30,36 @@ export class TaskComponent implements OnInit {
         private taskService: TaskService,
         private authService: AuthService) { }
 
-    /*
-* get filteredByName return the filteredByName
-*/
-    get filterStartDate(): Date {
-        return this._filterStartDate;
+
+
+    get filterEndtDateString(): string {
+        return this._filterEndString;
     }
 
     /*
     * set filteredByName set the filteredByName and set new  filterTasks by the filteredByName that we set
     */
-    set filterStartDate(filterStartDate: Date) {
-  
-
+    set filterEndtDateString(filterEndtDateString: string) {    
+        this._filterEndtDate = new Date(filterEndtDateString.substring(0, 10));
+        this.filterTasks = this.listTasks.filter((task) => task.information.toLowerCase().indexOf(this._filteredByName) != -1 &&
+            this._filterEndtDate.getTime() >= task.endDate.getTime() &&
+            this._filterStartDate.getTime() <= task.startDate.getTime());
     }
 
+    get filterStartString(): string {
+        return this._filterStartString;
+    }
 
+    /*
+    * set filteredByName set the filteredByName and set new  filterTasks by the filteredByName that we set
+    */
+    set filterStartString(filterStartString: string) {      
+        this._filterStartDate = new Date(filterStartString.substring(0, 10));
+
+        this.filterTasks = this.listTasks.filter((task) => task.information.toLowerCase().indexOf(this._filteredByName) != -1 &&
+            this._filterEndtDate.getTime() >= task.endDate.getTime() &&
+            this._filterStartDate.getTime() <= task.startDate.getTime());
+    }
 
     /*
     * get filteredByName return the filteredByName
@@ -58,7 +74,7 @@ export class TaskComponent implements OnInit {
     set filteredByName(filteredByName: string) {
         var compareString = filteredByName.toLowerCase();
         this._filteredByName = filteredByName;
-        this.filterTasks = this.listTasks.filter((task) => task.information.toLowerCase().indexOf(compareString) != -1);
+        this.filterTasks = this.listTasks.filter((task) => task.information.toLowerCase().indexOf(compareString) != -1  && this._filterEndtDate.getTime() >= task.endDate.getTime()  && this._filterStartDate.getTime() <= task.startDate.getTime());
 
     }
 
@@ -69,10 +85,15 @@ export class TaskComponent implements OnInit {
     ngOnInit() {
        
         this.pageTitle = "Welcome " + this.authService.getUserFirstName() + " Here Your Task List";
-
-
+        this._filteredByName = '';
+        this._filterStartDate = new Date();
+        this._filterEndtDate = new Date();
         this.taskService.getTask(this.authService.getUserId()).subscribe(tasks => {
             this.listTasks = tasks.json() as ITask[];
+            for (var i = 0; i < this.listTasks.length; i++) {
+                this.listTasks[i].startDate = new Date(this.listTasks[i].startDate);
+                this.listTasks[i].endDate = new Date(this.listTasks[i].endDate);
+            }
             this.filterTasks = tasks.json() as ITask[];
 
         },

@@ -1,6 +1,10 @@
 
 <div class='main-nav'>
-    <div class='navbar navbar-inverse'>
+    
+    <span *ngIf='this.openNavBar' (click)="close()" class='btn glyphicon glyphicon-align-justify '>open</span>
+    <div class='navbar navbar-inverse' [ngbCollapse]="openNavBar">
+
+
         <div class='navbar-header'>
             <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
                 <span class='sr-only'>Toggle navigation</span>
@@ -12,8 +16,13 @@
         </div>
         <div class='clearfix'></div>
         <div class='navbar-collapse collapse'>
-           
+
             <ul class='nav navbar-nav '>
+                <li *ngIf='!this.openNavBar' >
+                    <a *ngIf='!this.openNavBar' (click)="open()">
+                        <span class='glyphicon glyphicon-align-justify'></span> close
+                    </a>
+                </li>
                 <li *ngIf='!this.authService.isLoggedIn()' [routerLinkActive]="['link-active']">
                     <a *ngIf='!this.authService.isLoggedIn()' [routerLink]="['/login']">
                         <span class='glyphicon glyphicon-user'></span> Login
@@ -46,7 +55,7 @@
                     </a>
                 </li>
 
-                <li [routerLinkActive]="['link-active']" >
+                <li [routerLinkActive]="['link-active']">
                     <a [routerLink]="['/snake']">
                         <span class='glyphicon glyphicon-pawn'></span> Snake
                     </a>
